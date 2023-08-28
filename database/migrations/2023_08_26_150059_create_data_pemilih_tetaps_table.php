@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kecamatans', function (Blueprint $table) {
+        Schema::create('data_pemilih_tetaps', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kecamatan');
-            $table->string('longitude');
-            $table->string('latitude');
+            $table->integer('total_pemilih_tetap');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kecamatans');
+        Schema::dropIfExists('data_pemilih_tetaps');
     }
 };

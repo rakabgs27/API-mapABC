@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kecamatan extends Model
+class DataPemilihTetap extends Model
 {
     use HasFactory;
 
-    protected $table = 'kecamatans';
+    protected $table = 'data_pemilih_tetaps';
 
     protected $fillable = [
-        'nama_kecamatan',
-        'longitude',
-        'latitude',
+        'total_pemilih_tetap',
     ];
-
 }
