@@ -1,0 +1,150 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Data Pemilih Malang Raya",
+        "description": "INAGATA CINTA KAMUEEE",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/v1/{id}/popup-data": {
+            "get": {
+                "tags": [
+                    "PopUp Detail"
+                ],
+                "summary": "Get popup data",
+                "description": "Untuk request ketika marker di klik",
+                "operationId": "52b6a92f3c1e5c60678c74acf4ca2310",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the kecamatan",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful retrieval",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "description": "The status of the request",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message of the request",
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "id_kecamatan": {
+                                                    "type": "integer"
+                                                },
+                                                "pemilih": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "id_kecamatan": {
+                                                            "type": "integer"
+                                                        },
+                                                        "nama_kecamatan": {
+                                                            "type": "string"
+                                                        },
+                                                        "id_total_pemilih_tetap": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_pemilih_tetap": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_pemilih_kecamatan": {
+                                                            "type": "integer"
+                                                        },
+                                                        "presentase": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "logistik": {
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_beasiswa": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_sembako": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_kaos": {
+                                                            "type": "integer"
+                                                        },
+                                                        "total_logistik": {
+                                                            "type": "integer"
+                                                        },
+                                                        "id_kecamatan": {
+                                                            "type": "integer"
+                                                        },
+                                                        "nama_kecamatan": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "kecamatans": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "properties": {
+                                                            "nama_kecamatan": {
+                                                                "type": "string"
+                                                            },
+                                                            "presentase": {
+                                                                "type": "number"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "description": "The status of the request",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message of the request",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

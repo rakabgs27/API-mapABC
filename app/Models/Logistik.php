@@ -18,4 +18,9 @@ class Logistik extends Model
         'total_logistik',
         'id_kecamatan',
     ];
+
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class, 'id_kecamatan');
+    }
 }

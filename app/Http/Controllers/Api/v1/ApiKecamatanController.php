@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api\v1;
 
 
 use App\Models\Kecamatan;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\KecamatanResource;
 
 class ApiKecamatanController extends Controller
 {
@@ -20,15 +20,10 @@ class ApiKecamatanController extends Controller
                 'data' => []
             ];
         } else {
-            // Menghapus kolom "created_at" dan "updated_at" dari setiap objek Kecamatan
-            $cleanedKecamatanData = $kecamatans->map(function ($kecamatan) {
-                return collect($kecamatan)->except(['created_at','updated_at']);
-            });
-
             $response = [
                 'status' => 'success',
                 'message' => 'Data retrieved successfully',
-                'data' => $cleanedKecamatanData
+                'data' => KecamatanResource::collection($kecamatans)
             ];
         }
 

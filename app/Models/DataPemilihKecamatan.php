@@ -18,4 +18,14 @@ class DataPemilihKecamatan extends Model
         'id_total_pemilih_tetap',
 
     ];
+
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class, 'id_kecamatan');
+    }
+
+    public function totalPemilihTetap()
+    {
+        return $this->belongsTo(DataPemilihTetap::class, 'id_total_pemilih_tetap');
+    }
 }
